@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 export const PrivateRoute = ({ children }) => {
-  const currentUser = false:
+  const currentUser = false;
 
   if(!currentUser) {
     return <Navigate to="/" replace={true}  />
