@@ -2,7 +2,7 @@
 const Navbar = () => {
   return (
     <div className="navbar bg-primary text-primary-content">
-<div className="containerWrap">
+<div className="containerWrap flex justify-between">
   <button className="btn btn-ghost text-xl">daisyUI</button>
   <button>Logout</button>
 </div>
