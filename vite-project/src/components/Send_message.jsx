@@ -5,6 +5,7 @@ const Send_message = () => {
 
 
  const handleSendMessage = () => {
+  e.preventDefault();
   console.log(value);
  }
 
