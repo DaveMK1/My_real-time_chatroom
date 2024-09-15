@@ -6,7 +6,8 @@ function App() {
   return (
     <>
      <Navbar />
-     <Login />
+     {/* <Login /> */}
+     <ChatRoom />
     </>
   )
 }
