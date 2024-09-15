@@ -2,11 +2,10 @@ import { useState } from "react"
 
 const Send_message = () => {
  const [value, setValue] = useState("");
-
+ console.log(value);
 
  const handleSendMessage = () => {
   e.preventDefault();
-  console.log(value)
  }
 
  return (
