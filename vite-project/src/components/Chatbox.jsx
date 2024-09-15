@@ -1,7 +1,9 @@
 
 const Chatbox = () => {
   return (
-    <div>Chatbox</div>
+    <div className="pb-46 pt-23 containerWrap">
+      message
+    </div>
   )
 }
 
