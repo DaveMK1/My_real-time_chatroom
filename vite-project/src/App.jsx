@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
-import Login from "./pages/Login";
 import ChatRoom from "./pages/ChatRoom";
+import Login from "./pages/Login";
 
 function App() {
 
