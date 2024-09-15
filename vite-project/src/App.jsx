@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ChatRoom from "./pages/ChatRoom";
 import Login from "./pages/Login";
+import { PrivateRoute } from "./routes/PrivateRoute";
 
 function App() {
 
