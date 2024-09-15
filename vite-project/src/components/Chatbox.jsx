@@ -10,7 +10,7 @@ const Chatbox = () => {
      id: 2,
      message: "hey"
     }
-]
+  ]
 
   return (
     <div className="pb-46 pt-23 containerWrap">
