@@ -1,7 +1,12 @@
+import Chatbox from "../components/Chatbox"
+import Send_message from "../components/Send_message"
 
 const ChatRoom = () => {
   return (
-    <div>ChatRoom</div>
+    <div>
+      <Chatbox />
+      <Send_message />
+    </div>
   )
 }
 
