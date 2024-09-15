@@ -1,8 +1,8 @@
 
 const Navbar = () => {
   return (
-    <div>
-<div className="containerWrap navbar bg-primary text-primary-content">
+    <divclassName="navbar bg-primary text-primary-content">
+<div className="containerWrap>
   <button className="btn btn-ghost text-xl">daisyUI</button>
 </div>
     </div>
