@@ -1,7 +1,7 @@
 
 const Message = ({ message }) => {
   return (
-    <div>{message.message}</div>
+    <div>{message.text}</div>
   )
 }
 

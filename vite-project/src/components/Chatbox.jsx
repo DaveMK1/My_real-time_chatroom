@@ -5,11 +5,11 @@ const Chatbox = () => {
   const messages = [
     {
      id: 1,
-     message: "hi there"
+     text: "hi there"
     },
     {
      id: 2,
-     message: "hey"
+     text: "hey"
     }
   ]
 
