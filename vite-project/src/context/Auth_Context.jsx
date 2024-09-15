@@ -16,7 +16,7 @@ setCurrentUser
     <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
-  (
+  )
 }
 
 export const UserAuth = () => {
