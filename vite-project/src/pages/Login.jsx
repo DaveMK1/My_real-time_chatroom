@@ -1,5 +1,8 @@
 
 const Login = () => {
+  const { currentUser } = UserAuth();
+  console.log(currentUser)
+
   return (
 <div className="hero bg-base-200 min-h-screen">
   <div className="hero-content text-center">
@@ -12,7 +15,7 @@ const Login = () => {
     </div>
   </div>
 </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
