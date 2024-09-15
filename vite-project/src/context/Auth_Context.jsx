@@ -13,12 +13,12 @@ setCurrentUser
 }
 
   return (
-    <AuthContext.Provider value={value}>
+    <Auth_Context.Provider value={value}>
       {children}
-    </AuthContext.Provider>
+    </Auth_Context.Provider>
   )
 }
 
 export const UserAuth = () => {
-  return useContext(AuthContext);
+  return useContext(Auth_Context);
 }
