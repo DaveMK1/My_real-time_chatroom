@@ -1,5 +1,6 @@
 import { createContext, useState, useContext } from "react"
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { auth } from "../firebase";
 
 
 // create
