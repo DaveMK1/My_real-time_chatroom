@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBudRaB6yPEC1FubO0WEJd6OIKdnw305vA",
-  authDomain: "my-real-time-chatroom-72791.firebaseapp.com",
-  projectId: "my-real-time-chatroom-72791",
-  storageBucket: "my-real-time-chatroom-72791.appspot.com",
-  messagingSenderId: "598637876443",
-  appId: "1:598637876443:web:a73fb4249eb4c0f79768fe"
+  apiKey: "AIzaSyBTkJ17_1HsT07cdiXnJcTCOIEtxtPCwBM",
+  authDomain: "my-realtime-chatroom.firebaseapp.com",
+  projectId: "my-realtime-chatroom",
+  storageBucket: "my-realtime-chatroom.appspot.com",
+  messagingSenderId: "155161083214",
+  appId: "1:155161083214:web:f6f4c3873f7c32d555b21f"
 };
 
 
