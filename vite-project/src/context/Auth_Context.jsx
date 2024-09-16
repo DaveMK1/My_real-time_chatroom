@@ -7,7 +7,7 @@ import { auth } from "../firebase";
 const Auth_Context = createContext();
 // Provider
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState("null");
+  const [currentUser, setCurrentUser] = useState(null);
 
   // signin
   const signinWithGoogle = () => {
