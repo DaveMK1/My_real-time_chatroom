@@ -1,16 +1,24 @@
 import { createContext, useState, useContext } from "react"
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 // create
 const Auth_Context = createContext();
 // Provider
 export const AuthProvider = ({ children }) => {
-const [currentUser, setCurrentUser] = useState("dave");
+  const [currentUser, setCurrentUser] = useState("null");
 
-const value = {
-currentUser,
-setCurrentUser
-}
+  // signin
+  const signinWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithRedirect(auth, provider)
+
+
+  const value = {
+    currentUser,
+    setCurrentUser,
+    signinWithGoogle
+  }
 
   return (
     <Auth_Context.Provider value={value}>
