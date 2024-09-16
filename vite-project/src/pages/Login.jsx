@@ -19,7 +19,7 @@ const Login = () => {
       <p className="py-6">
         Connect, chat, and share experiences with a vibrant community—all in one space!
       </p>
-      <button onClick={handleLogin} className="btn">Login With Google</button>
+      <button onClick={handleLogin} className="btn btn-primary">Login With Google</button>
     </div>
   </div>
 </div>
