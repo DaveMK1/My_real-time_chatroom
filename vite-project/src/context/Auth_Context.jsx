@@ -22,6 +22,14 @@ export const AuthProvider = ({ children }) => {
     signinWithGoogle
   }
 
+  // set currentUser
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    });
+
+    return unsubscribe;
+  }, []);
+
   return (
     <Auth_Context.Provider value={value}>
       {children}
