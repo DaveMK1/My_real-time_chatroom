@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
   const signinWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithRedirect(auth, provider)
+  }
 
 
   const value = {
