@@ -17,17 +17,14 @@ const Chatbox = () => {
   ]
 
   useEffect(() => {
-    const q = query(
-      collection(db, "messages"),
-    );
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const messages = [];
-      querySnapshot.forEach((doc) => {
-        // messages.push({ ...doc.data(), id: doc.id });
-        console.log(doc.data())
-      });
-      setMassages(messages);
-    });
+    const q = query(collection(db, "messages"), orderBy("timestamp"))
+    const unsubscribe = onSnapshot(q, snapshot => {
+      setMessages(snapshot.docs.map(doc => ({
+        id: doc.id,
+        data: doc.data()
+      })))
+    })
+    return unsubscribe
   }, []);
 
   return (
