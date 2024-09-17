@@ -31,7 +31,7 @@ const ChatBox = () => {
   }, []);
 
   return (
-    <div className="pb-42 pt-18 containerWrap">
+    <div className="pb-44 pt-20 containerWrap overflow-y-auto max-h-[calc(100vh-120px)]"">
       {messages.map((message) => (
         <Message key={message.id} message={message} />
       ))}
