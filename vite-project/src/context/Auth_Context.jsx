@@ -35,8 +35,8 @@ export const AuthProvider = ({ children }) => {
         setCurrentUser(user);
       } else {
         setCurrentUser(null);  // Clear the current user when logged out
-        setLoading(false)
       }
+      setLoading(false)
     });
 
     return unsubscribe;
