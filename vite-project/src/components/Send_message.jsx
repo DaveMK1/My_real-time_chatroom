@@ -1,6 +1,6 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
-import { UserAuth } from "../context/AuthContext";
+import { UserAuth } from "../context/Auth_Context";
 import { db } from "../firebase";
 
 const SendMessage = () => {
