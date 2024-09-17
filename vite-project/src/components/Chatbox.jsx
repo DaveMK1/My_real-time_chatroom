@@ -1,39 +1,43 @@
 import Message from "./Message";
-import { collection, query, where, onSnapshot } from "firebase/firestore";
-import { useEffect } from "react";
+import { collection, query, onSnapshot, orderBy, limit } from "firebase/firestore";
+import { useEffect, useRef, useState } from "react";
 import { db } from "../firebase";
 
-const Chatbox = () => {
+const ChatBox = () => {
+  const messagesEndRef = useRef();
+  const [messages, setMassages] = useState([]);
 
-  const messages = [
-    {
-     id: 1,
-     text: "hi there"
-    },
-    {
-     id: 2,
-     text: "hey"
-    }
-  ]
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth"})
+  };
+
+  useEffect(scrollToBottom, [messages])
 
   useEffect(() => {
-    const q = query(collection(db, "messages"), orderBy("timestamp"))
-    const unsubscribe = onSnapshot(q, snapshot => {
-      setMessages(snapshot.docs.map(doc => ({
-        id: doc.id,
-        data: doc.data()
-      })))
-    })
-    return unsubscribe
+    const q = query(
+      collection(db, "messages"),
+      orderBy("createdAt"),
+      limit(50),
+    );
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const messages = [];
+      querySnapshot.forEach((doc) => {
+        messages.push({ ...doc.data(), id: doc.id });
+      });
+      setMassages(messages);
+    });
+
+    return () => unsubscribe;
   }, []);
 
   return (
-    <div className="pb-46 pt-23 containerWrap">
+    <div className="pb-44 pt-20 containerWrap">
       {messages.map((message) => (
         <Message key={message.id} message={message} />
       ))}
+      <div ref={messagesEndRef}></div>
     </div>
-  )
-}
+  );
+};
 
-export default Chatbox
+export default ChatBox;
