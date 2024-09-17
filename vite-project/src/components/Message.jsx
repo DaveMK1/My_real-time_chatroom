@@ -1,4 +1,4 @@
-import { UserAuth } from "../context/AuthContext";
+import { UserAuth } from "../context/Auth_Context";
 
 const Message = ({ message }) => {
   const { currentUser } = UserAuth();
