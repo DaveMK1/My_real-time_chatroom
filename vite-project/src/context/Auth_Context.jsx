@@ -1,5 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 
 const Auth_Context = createContext();
@@ -11,23 +11,27 @@ export const AuthProvider = ({ children }) => {
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);  // Use signInWithPopup instead of signInWithRedirect
+      await signInWithPopup(auth, provider);
     } catch (error) {
       console.log(error);
     }
   };
+  
+  // signout
+  const logout = () => signOut(auth);
 
   const value = {
     currentUser,
     setCurrentUser,
-    handleGoogleLogin,  // Update to new method name
+    handleGoogleLogin,
+    logout
   };
 
   // Set currentUser when authentication state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setCurrentUser(user);  // Update the current user state
+        setCurrentUser(user);
       } else {
         setCurrentUser(null);  // Clear the current user when logged out
       }
