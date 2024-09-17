@@ -26,6 +26,7 @@ const Chatbox = () => {
       });
       setMassages(messages);
     });
+  }, []);
 
   return (
     <div className="pb-46 pt-23 containerWrap">
