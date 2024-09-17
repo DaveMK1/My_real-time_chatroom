@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar fixed z-10 bg-primary text-primary-content">
+    <div className="navbar fixed bg-primary text-primary-content">
 <div className="containerWrap flex justify-between">
   <a className="btn btn-ghost normal-case text-xl">My Real-Time Chatroom</a>
   {currentUser ? <button onClick={handleLogout}>Logout</button> : ""}
