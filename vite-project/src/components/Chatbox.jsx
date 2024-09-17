@@ -1,4 +1,5 @@
 import Message from "./Message";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 
 const Chatbox = () => {
 
@@ -12,6 +13,19 @@ const Chatbox = () => {
      text: "hey"
     }
   ]
+
+  useEffect(() => {
+    const q = query(
+      collection(db, "messages"),
+    );
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const messages = [];
+      querySnapshot.forEach((doc) => {
+        // messages.push({ ...doc.data(), id: doc.id });
+        console.log(doc.data())
+      });
+      setMassages(messages);
+    });
 
   return (
     <div className="pb-46 pt-23 containerWrap">
