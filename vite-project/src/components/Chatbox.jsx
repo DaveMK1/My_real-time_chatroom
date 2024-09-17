@@ -1,6 +1,7 @@
 import Message from "./Message";
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { useEffect } from "react";
+import { db } from "../firebase";
 
 const Chatbox = () => {
 
