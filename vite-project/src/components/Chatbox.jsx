@@ -5,29 +5,29 @@ import { db } from "../firebase";
 
 const ChatBox = () => {
   const messagesEndRef = useRef();
-  const [messages, setMassages] = useState([]);
+  const [messages, setMessages] = useState([]); // Fixed typo
 
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: "smooth"})
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(scrollToBottom, [messages])
+  useEffect(scrollToBottom, [messages]);
 
   useEffect(() => {
     const q = query(
       collection(db, "messages"),
-      orderBy("createdAt"),
-      limit(50),
+      orderBy("createdAt"), // Ensure this matches the field name in Firestore
+      limit(50)
     );
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
       querySnapshot.forEach((doc) => {
         messages.push({ ...doc.data(), id: doc.id });
       });
-      setMassages(messages);
+      setMessages(messages);
     });
 
-    return () => unsubscribe;
+    return () => unsubscribe();
   }, []);
 
   return (
