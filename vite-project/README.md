@@ -1,8 +1,15 @@
-# React + Vite
+# My Real-Time Chatroom
+A real-time chatroom built using React, Firebase, and Vercel.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- Google Authentication
+- Real-time messaging with Firebase Firestore
+- Responsive design
 
-Currently, two official plugins are available:
+## Setup Instructions
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Create a `.env` file with Firebase API keys
+4. Run the app locally with `npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Link to live demo](https://my-real-time-chatroom.vercel.app)
