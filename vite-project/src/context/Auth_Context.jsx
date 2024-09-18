@@ -1,5 +1,12 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
+import { 
+  GoogleAuthProvider, 
+  signInWithPopup, 
+  onAuthStateChanged, 
+  signOut, 
+  setPersistence, 
+  browserSessionPersistence 
+} from "firebase/auth";
 import { auth } from "../firebase";
 
 const Auth_Context = createContext();
@@ -11,7 +18,12 @@ export const AuthProvider = ({ children }) => {
   // Google sign-in
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
+
     try {
+      // Set session persistence to browser session
+      await setPersistence(auth, browserSessionPersistence);
+
+      // Proceed with Google sign-in
       await signInWithPopup(auth, provider);
     } catch (error) {
       console.log(error);
@@ -36,7 +48,7 @@ export const AuthProvider = ({ children }) => {
       } else {
         setCurrentUser(null);  // Clear the current user when logged out
       }
-      setLoading(false)
+      setLoading(false);
     });
 
     return unsubscribe;
