@@ -5,12 +5,12 @@ import { getAuth } from "firebase/auth";  // <-- Firebase Auth is used for user 
 
 // Firebase configuration object with project-specific keys and identifiers
 const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id"
+  apiKey: "AIzaSyBTkJ17_1HsT07cdiXnJcTCOIEtxtPCwBM",
+  authDomain: "my-realtime-chatroom.firebaseapp.com",
+  projectId: "my-realtime-chatroom",
+  storageBucket: "my-realtime-chatroom.appspot.com",
+  messagingSenderId: "155161083214",
+  appId: "1:155161083214:web:f6f4c3873f7c32d555b21f"
 };
 
 // Initialize Firebase with the provided config
