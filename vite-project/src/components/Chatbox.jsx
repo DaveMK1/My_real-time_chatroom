@@ -1,4 +1,5 @@
 // Import necessary Firebase functions for Firestore querying and real-time updates
+import Message from "./Message";
 import { collection, query, onSnapshot, orderBy, limit } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { db } from "../firebase"; // Firestore instance
@@ -22,7 +23,7 @@ const ChatBox = () => {
       orderBy("createdAt"), // Order by the 'createdAt' timestamp
       limit(50) // Limit to the latest 50 messages
     );
-    
+
     // Subscribe to real-time updates on the messages collection
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const messages = [];
